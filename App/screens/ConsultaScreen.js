@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import axios from 'axios';
+import { API_BASE_URL } from '@env';
 
 const ConsultaScreen = () => {
   const [dados, setDados] = useState([]);
 
   const handleConsulta = async () => {
     try {
-      const response = await axios.get('http://10.68.152.123:3000/usuarios');
+      const response = await axios.get(`${API_BASE_URL}/usuarios`);
       setDados(response.data);
       alert('Consulta realizada com sucesso!');
     } catch (error) {

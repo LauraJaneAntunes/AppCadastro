@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
-import axios from 'axios;'
+import axios from 'axios';
+import { API_BASE_URL } from '@env';
 
 const DeleteScreen = () => {
     const [id, setId] = useState ('');
@@ -12,7 +13,7 @@ const DeleteScreen = () => {
         }
 
         try {
-            const response = await axios.delete(`http://10.68.152.123:3000/api/deletar/${id}`);
+            const response = await axios.delete(`${API_BASE_URL}/api/deletar${id}`);
             Alert.alert('Sucesso', response.data.message);
             setId('');
         } catch (error) {

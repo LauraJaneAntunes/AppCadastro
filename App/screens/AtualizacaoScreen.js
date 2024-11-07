@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
-import axios from 'axios;'
+import axios from 'axios';
+import { API_BASE_URL } from '@env';
 
 const AtualizacaoScreen = () => {
 
@@ -17,7 +18,7 @@ const AtualizacaoScreen = () => {
         }
 
         try {
-            const response = await axios.put(`http://10.68.152.123:3000/api/atualizacao/${id}`, {
+            const response = await axios.put(`${API_BASE_URL}/api/atualizacao/${id}`, {
                 nome,
                 email,
                 senha,        

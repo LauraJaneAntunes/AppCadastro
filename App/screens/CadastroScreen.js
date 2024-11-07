@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import axios from 'axios';
+import { API_BASE_URL } from '@env';
 
 export default function CadastroScreen() {
   const [nome, setNome] = useState('');
@@ -9,7 +10,7 @@ export default function CadastroScreen() {
 
   const handleCadastro = async () => {
     try {
-      const response = await axios.post('http://10.68.152.123:3000/cadastro', {
+      const response = await axios.post(`${API_BASE_URL}/cadastro`, {
         nome,
         email,
         senha,
