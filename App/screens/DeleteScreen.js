@@ -13,7 +13,7 @@ const DeleteScreen = () => {
         }
 
         try {
-            const response = await axios.delete(`${API_BASE_URL}/api/deletar${id}`);
+            const response = await axios.delete(`${API_BASE_URL}/api/deletar/${id}`);
             Alert.alert('Sucesso', response.data.message);
             setId('');
         } catch (error) {

@@ -2,7 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 // Armazenando em memória (simulando banco de dados)
-let users = [];
+let users = [
+    {
+        nome: "Teste",
+        email: "teste@email.com",
+        senha: "Senh@123"
+    }
+];
 
 // Rota para cadastro de usuário
 router.post('/cadastro', (req, res) => {

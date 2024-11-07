@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const userRoutes = require('./Rotas.userRoutes');
+const userRoutes = require('./Rotas/userRoutes');
 
 const app = express();
 const PORT = 3000;

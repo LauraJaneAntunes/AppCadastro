@@ -31,10 +31,10 @@ Este projeto é um aplicativo mobile desenvolvido em React Native para o curso d
             Endereço IPv4. . . . . . . .  . . . . . . . : 123.456.7.890
 
  4. **Execute o projeto:**
-     * Em Api:
-    npm start
+     * Primeiro a Api: de um cd Api no terminal
+    node index.js
 
-     * Em App:
+     * Em seguida App: abra outra janela do terminal, de um cd App
     npx expo start
 
  5. Acessar a Aplicação:

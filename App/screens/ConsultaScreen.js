@@ -8,7 +8,7 @@ const ConsultaScreen = () => {
 
   const handleConsulta = async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/usuarios`);
+      const response = await axios.get(`${API_BASE_URL}/api/consulta`);
       setDados(response.data);
       alert('Consulta realizada com sucesso!');
     } catch (error) {

@@ -10,7 +10,7 @@ export default function CadastroScreen() {
 
   const handleCadastro = async () => {
     try {
-      const response = await axios.post(`${API_BASE_URL}/cadastro`, {
+      const response = await axios.post(`${API_BASE_URL}/api/cadastro`, {
         nome,
         email,
         senha,
@@ -26,7 +26,7 @@ export default function CadastroScreen() {
 
   const fetchUsuarios = async () => {
     try {
-      const response = await axios.get('http://10.68.152.123/usuario');
+      const response = await axios.get(`${API_BASE_URL}/api/consulta`);
 
     } catch (error) {
       console.error('Erro so buscar dados:', error);
