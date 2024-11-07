@@ -1,20 +1,17 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import CadastroScreen from './screens/CadastroScreen';   
+const express = require('express');
+const bodyParser = require('body-parser');
+const userRoutes = require('./Rotas.userRoutes');
 
+const app = express();
+const PORT = 3000;
 
-const Stack = createNativeStackNavigator();
+//Middleware
+app.use(bodyParser.json());
 
-const App = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Cadastro" component={CadastroScreen}   
- />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
+//Rotas
+app.use('/api', userRoutes);
 
-export default App;
+//Iniciar o servidor
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
